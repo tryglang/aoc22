@@ -13,11 +13,6 @@ fn main() {
         Some(data) => println!("Part 2: {}", data),
         None => println!("Part 2: not done")
     }
-
-
-
-    //let total = bot_cals[bot_cals.len() -1];
-    //println!("{:?}", total);
 }
 
 pub mod part1 {
@@ -82,8 +77,6 @@ fn get_input() -> Vec<String>{
             }
         }
     };
-    
-    //println!("{}", content);
     
     let lines =  content.split("\n");
 

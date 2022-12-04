@@ -11,7 +11,6 @@ use std::{fs, process::exit};
             value = c as usize - 38;
         }
 
-        //println!("value: {}", value);
         value
     }
 
@@ -37,10 +36,7 @@ pub fn solve(input: &str) -> Option<usize> {
 
             println!("");
         }
-/*
-        get_char_value('a');
-        println!("{}",get_char_value('L'));
-*/
+
         Some(sum)
     }
 
