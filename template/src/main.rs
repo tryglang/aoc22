@@ -4,41 +4,23 @@ pub mod part1 {
     pub fn solve(input: &str) -> Option<usize> {
         None
     }
-    
-    #[cfg(test)]
-    mod tests {
-        use super::*;
-    
-        #[test]
-        fn test_part1() {
-            let input = ""; // test case input
-
-            let answer = solve(input); // Get answer
-
-            let answer = match answer {
-                Some(value) => value,
-                None => 0,
-            };
-
-            assert_eq!(answer, 1234); // test your answer agains test case answer
-        }
-    }
 }
 
 pub mod part2 {
     pub fn solve(input: &str) -> Option<usize> {
         None
     }
+}
 
-    #[cfg(test)]
-    mod tests {
-        use super::*;
-    
-        #[test]
-        fn test_part2() {
-            let input = ""; // test case input
+#[cfg(test)]
+mod tests {
+    use super::*;
+    const INPUT: &str = "";
 
-            let answer = solve(input); // Get answer
+    #[test]
+        fn test_part1() {
+
+            let answer = part1::solve(INPUT); // Get answer
 
             let answer = match answer {
                 Some(value) => value,
@@ -47,7 +29,19 @@ pub mod part2 {
 
             assert_eq!(answer, 1234); // test your answer agains test case answer
         }
-    }
+
+    #[test]
+        fn test_part2() {
+
+            let answer = part2::solve(INPUT); // Get answer
+
+            let answer = match answer {
+                Some(value) => value,
+                None => 0,
+            };
+
+            assert_eq!(answer, 1234); // test your answer agains test case answer
+        }
 }
 
 fn main() {
