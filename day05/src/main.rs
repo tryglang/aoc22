@@ -42,7 +42,7 @@ fn parse_input(input: &str) -> Vec<Vec<char>> {
 pub mod part1 {
     use crate::parse_input;
 
-pub fn solve(input: &str) -> Option<String> {
+    pub fn solve(input: &str) -> Option<String> {
 
 
         let parts: Vec<&str> = input.split("\n\n").collect();
@@ -79,8 +79,40 @@ pub fn solve(input: &str) -> Option<String> {
 }
 
 pub mod part2 {
-    pub fn solve(input: &str) -> Option<String> {
-        None
+    use crate::parse_input;
+
+pub fn solve(input: &str) -> Option<String> {
+
+        let parts: Vec<&str> = input.split("\n\n").collect();
+
+        let mut storage = parse_input(input);
+
+        let mut solution: Vec<char> = Vec::new();
+
+        for line in parts[1].lines() {
+            let split_line: Vec<&str> = line.split(" ").collect();
+
+            let amount = split_line[1].parse::<usize>().unwrap();
+            let from = split_line[3].parse::<usize>().unwrap();
+            let to = split_line[5].parse::<usize>().unwrap();
+
+                let unit_length = storage[to - 1].len();
+            for _ in 0..amount {
+                let temp = storage[from - 1].pop().unwrap();
+                storage[to -1].insert(unit_length, temp);
+            }
+            
+        }
+
+        for mut i in storage {
+            match i.pop() {
+                Some(value) => {solution.push(value)},
+                _ => {},
+            }
+        }
+
+        let solution = solution.iter().collect::<String>();
+        Some(solution)
     }
 }
 
@@ -120,7 +152,7 @@ move 1 from 1 to 2";
                 None => String::from(""),
             };
 
-            assert_eq!(answer, "CMZ"); // test your answer agains test case answer
+            assert_eq!(answer, "MCD"); // test your answer agains test case answer
         }
 }
 
